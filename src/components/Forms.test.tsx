@@ -3,7 +3,11 @@ import Forms from "./Forms";
 import { RecoilRoot } from "recoil";
 
 test('quando o input está vazio, novos participantes não podem ser adicionados', () => {
-    render(<Forms />)
+    render(
+        <RecoilRoot>
+            <Forms />
+        </RecoilRoot>
+    )
 
     const input = screen.getByPlaceholderText('Insira os nomes dos participantes')
     const button = screen.getByRole('button')
@@ -30,4 +34,33 @@ test('adicionar um participante caso exista um nome preenchido', () => {
     fireEvent.click(button)
     expect(input).toHaveFocus()
     expect(input).toHaveValue('')
+})
+
+test('nomes duplicados não podem ser adicionados na lista' ,() =>{
+    render(
+        <RecoilRoot>
+            <Forms />
+        </RecoilRoot>
+    )
+
+    const input = screen.getByPlaceholderText('Insira os nomes dos participantes')
+    const button = screen.getByRole('button')
+    fireEvent.change(input, {
+        target: {
+            value: 'Gustavo'
+        }
+    })
+    fireEvent.click(button)
+
+    fireEvent.change(input, {
+        target: {
+            value: 'Gustavo'
+        }
+    })
+    fireEvent.click(button)
+
+    const errorMessage = screen.getByRole('alert')
+    expect(errorMessage.textContent).toBe('Nomes duplicados não são permitidos!')
+
+
 })
