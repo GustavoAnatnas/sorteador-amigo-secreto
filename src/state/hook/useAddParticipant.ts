@@ -9,6 +9,9 @@ export const useAddParticipant = () => {
     return(newParticipant: string) =>{
         if(list.includes(newParticipant)){
             setError('Nomes duplicados não são permitidos!')
+            setTimeout(() => {
+                setError('')
+            }, 5000)
         }
         setList((list) => [...list, newParticipant])
     }
