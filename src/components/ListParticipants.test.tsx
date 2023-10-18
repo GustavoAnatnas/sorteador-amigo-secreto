@@ -16,14 +16,14 @@ describe('uma lista vazia de participantes', () => {
 
     test('não deve renderizar nenhum item', () => {
 
-    render(
-        <RecoilRoot>
-            <ListParticipants />
-        </RecoilRoot>
-    )
+        render(
+            <RecoilRoot>
+                <ListParticipants />
+            </RecoilRoot>
+        )
 
-    const itens = screen.queryAllByRole('listitem')
-    expect(itens).toHaveLength(0)
+        const itens = screen.queryAllByRole('listitem')
+        expect(itens).toHaveLength(0)
     })
 })
 
@@ -34,13 +34,13 @@ describe('uma lista preenchida de participantes', () => {
     })
     test('não deve renderizar nenhum item', () => {
 
-    render(
-        <RecoilRoot>
-            <ListParticipants />
-        </RecoilRoot>
-    )
+        render(
+            <RecoilRoot>
+                <ListParticipants />
+            </RecoilRoot>
+        )
 
-    const itens = screen.queryAllByRole('listitem')
-    expect(itens).toHaveLength(participants.length)
+        const itens = screen.queryAllByRole('listitem')
+        expect(itens).toHaveLength(participants.length)
     })
 })
