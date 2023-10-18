@@ -1,5 +1,7 @@
+import { useListParticipants } from "../state/hook/useListParticipants"
+
 export const ListParticipants = () => {
-    const participants: string[] = []
+    const participants: string[] = useListParticipants()
     return (
         <ul>
             {participants.map((participant) => 
