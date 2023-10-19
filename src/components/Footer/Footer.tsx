@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useListParticipants } from "../state/hook/useListParticipants"
+import { useListParticipants } from "../../state/hook/useListParticipants"
 
 const Footer = () => {
     const participants = useListParticipants()
