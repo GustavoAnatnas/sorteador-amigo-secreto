@@ -28,7 +28,7 @@ describe('uma lista vazia de participantes', () => {
 })
 
 describe('uma lista preenchida de participantes', () => {
-    const participants = ['Jhony', 'Gabe']
+    const participants = ['test', 'test']
     beforeEach(() => {
         (useListParticipants as jest.Mock).mockReturnValue(participants)
     })
