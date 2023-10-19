@@ -1,15 +1,21 @@
 import { useNavigate } from "react-router-dom"
 import { useListParticipants } from "../../state/hook/useListParticipants"
 import './styles.css'
+import { useSort } from "../../state/hook/useSort"
 
 const Footer = () => {
     const participants = useListParticipants()
 
     const redirect = useNavigate()
 
+    const sort = useSort()
+
+
     const handleStart = () => {
+        sort()
         redirect('/sorteio')
     }
+
 
     return (
         <footer

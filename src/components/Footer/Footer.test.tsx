@@ -12,10 +12,19 @@ jest.mock('../../state/hook/useListParticipants', () => {
 })
 
 const mockNavigate = jest.fn()
+
 jest.mock('react-router-dom', () => {
-    return {
-        useNavigate: () => mockNavigate
-    }
+  return {
+    useNavigate: () => mockNavigate
+  }
+}
+)
+const mockSort = jest.fn()
+
+jest.mock('../../state/hook/useSort', () => {
+  return {
+    useSort: () => mockSort
+  }
 }
 )
 
@@ -61,6 +70,6 @@ describe('onde existem participantes suficientes', () => {
 
       expect(mockNavigate).toHaveBeenCalledTimes(1)
       expect(mockNavigate).toHaveBeenCalledWith('/sorteio')
+      expect(mockSort).toHaveBeenCalledTimes(1)
   })
-
 })
