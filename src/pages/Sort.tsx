@@ -30,6 +30,7 @@ export const Sort = () => {
                     value={participant}
                     onChange={(e) => setParticipant(e.target.value)}
                 >
+                    <option>Selecione seu nome</option>
                     {participants.map((participant) => {
                         return (
                             <option
