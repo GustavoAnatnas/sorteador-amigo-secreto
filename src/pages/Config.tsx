@@ -1,6 +1,6 @@
-import Footer from "../components/Footer"
-import Forms from "../components/Forms"
-import { ListParticipants } from "../components/ListParticipants"
+import Footer from "../components/Footer/Footer"
+import Forms from "../components/Forms/Forms"
+import { ListParticipants } from "../components/ListParticipants/ListParticipants"
 
 export const Config = () => {
     return(
