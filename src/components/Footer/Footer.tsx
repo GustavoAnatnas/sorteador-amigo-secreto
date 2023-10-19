@@ -28,7 +28,7 @@ const Footer = () => {
             >
                 Iniciar brincadeira
             </button>
-            <img src="/public/sacolas.png" alt="Sacolas de compras" />
+            <img src="sacolas.png" alt="Sacolas de compras" />
         </footer>
     )
 }
