@@ -1,9 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import { RecoilRoot } from "recoil";
-import { useListParticipants } from "../state/hook/useListParticipants";
+import { useListParticipants } from "../../state/hook/useListParticipants";
 import { Sort } from "./Sort";
-import { useSortResult } from "../state/hook/useSortResult";
+import { useSortResult } from "../../state/hook/useSortResult";
 
 jest.mock('../state/hook/useListParticipants', () => {
     return {
