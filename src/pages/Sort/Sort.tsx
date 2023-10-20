@@ -16,6 +16,9 @@ export const Sort = () => {
         e.preventDefault()
         if (result.has(participant)) {
             setAmigoSecreto(result.get(participant)!)
+            setTimeout(() => {
+                setAmigoSecreto('')
+            }, 5000)
         }
     }
 
