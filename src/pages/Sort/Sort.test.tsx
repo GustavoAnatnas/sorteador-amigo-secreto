@@ -5,13 +5,13 @@ import { useListParticipants } from "../../state/hook/useListParticipants";
 import { Sort } from "./Sort";
 import { useSortResult } from "../../state/hook/useSortResult";
 
-jest.mock('../state/hook/useListParticipants', () => {
+jest.mock('../../state/hook/useListParticipants', () => {
     return {
         useListParticipants: jest.fn()
     }
 })
 
-jest.mock('../state/hook/useSortResult', () => {
+jest.mock('../../state/hook/useSortResult', () => {
     return {
         useSortResult: jest.fn()
     }
